@@ -1,0 +1,397 @@
+{% extends 'base.html.twig' %}
+
+{% block loader %} {% endblock %}
+
+{% block home %}
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="row">
+
+            <div class="content">
+                <h3>PROMO 75% </br>de réduction</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex minima at!</p>
+                <a href="{{path('pruducts')}}" class="btn">Nos Produits</a>
+            </div>
+
+            <div class="swiper books-slider">
+                <div class="swiper-wrapper">
+                    <a href="{{path('pruduct',{'slug' : 'antigone-jean-anouilh'})}}" class="swiper-slide"><img src="{{ asset('assets/image/book-1.png') }}" alt=""></a>
+                    <a href="{{path('pruduct',{'slug' : 'rhinoceros-abastado-claude'})}}" class="swiper-slide"><img src="{{ asset('assets/image/book-2.png') }}" alt=""></a>
+                    <a href="{{path('pruduct',{'slug' : 'leonard-est-toujours-un-genie'})}}" class="swiper-slide"><img src="{{ asset('assets/image/book-3.png') }}" alt=""></a>
+                    <a href="{{path('pruduct',{'slug' : 'brouillard-au-pont-de-tolbiac'})}}" class="swiper-slide"><img src="{{ asset('assets/image/book-4.png') }}" alt=""></a>
+                    <a href="{{path('pruduct',{'slug' : 'le-petit-prince'})}}" class="swiper-slide"><img src="{{ asset('assets/image/book-5.png') }}" alt=""></a>
+                    <a href="{{path('pruduct',{'slug' :'confessions-dun-enfant-de-la-chapelle-albert-simonin'})}}" class="swiper-slide"><img src="{{ asset('assets/image/book-6.png') }}" alt=""></a>
+                </div>
+                <img src="{{ asset('assets/image/stand.png') }}" class="stand" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- home section ense  -->
+
+    <!-- icons section starts  -->
+
+    <section class="icons-container">
+
+        <div class="icons">
+            <i class="fas fa-shipping-fast"></i>
+            <div class="content">
+                <h3>livraison gratuite</h3>
+                <p>commande de < 20€</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-lock"></i>
+            <div class="content">
+                <h3>payement sécurisé</h3>
+                <p>100% sécurisé</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-redo-alt"></i>
+            <div class="content">
+                <h3>renvoi facile</h3>
+                <p>10 jours de garantie</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-headset"></i>
+            <div class="content">
+                <h3>24/7 support</h3>
+                <p>appelez-nous!</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- icons section ends -->
+
+    <!-- featured section starts  -->
+
+    <section class="featured" id="featured">
+
+        <h1 class="heading"> <span>La sélection du jour</span> </h1>
+
+        <div class="swiper featured-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                       
+                        <a href="{{path('pruduct',{'slug' :'confessions-dun-enfant-de-la-chapelle-albert-simonin'})}}" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-6.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>sélection du jour</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <a href="{{ path('add_to_cart',{'id': '5' }) }}" class="btn">Ajouter au panier</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        
+                        <a href="{{path('pruduct',{'slug' :'confessions-dun-enfant-de-la-chapelle-albert-simonin'})}}" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-7.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>sélection du jour</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <a href="{{ path('add_to_cart',{'id': '6' }) }}" class="btn">Ajouter au panier</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="icons">
+                        
+                        <a href="{{path('pruduct',{'slug' :'confessions-dun-enfant-de-la-chapelle-albert-simonin'})}}" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-8.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>sélection du jour</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <a href="{{ path('add_to_cart',{'id': '7' }) }}" class="btn">Ajouter au panier</a>
+                    </div>
+                </div>
+                 <div class="swiper-slide box">
+                    <div class="icons">
+                        
+                        <a href="{{path('pruduct',{'slug' :'confessions-dun-enfant-de-la-chapelle-albert-simonin'})}}" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-4.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>sélection du jour</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <a href="{{ path('add_to_cart',{'id': '8' }) }}" class="btn">Ajouter au panier</a>
+                    </div>
+                </div>
+                 <div class="swiper-slide box">
+                    <div class="icons">
+                        
+                        <a href="{{path('pruduct',{'slug' :'confessions-dun-enfant-de-la-chapelle-albert-simonin'})}}" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-5.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>sélection du jour</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <a href="{{ path('add_to_cart',{'id': '9' }) }}" class="btn">Ajouter au panier</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+        </div>
+
+    </section>
+
+    <!-- featured section ends -->
+
+    <!-- newsletter section starts -->
+
+    <section class="newsletter">
+
+        <div style="height:200px"></div>
+
+    </section>
+
+    <!-- newsletter section ends -->
+
+    <!-- arrivals section starts  -->
+
+    <section class="arrivals" id="arrivals">
+
+        <h1 class="heading"> <span>Nouvel arrivage</span> </h1>
+
+        <div class="swiper arrivals-slider">
+
+            <div class="swiper-wrapper">
+
+                <a href="{{path('pruduct',{'slug' :'antigone-jean-anouilh'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-1.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'rhinoceros-abastado-claude'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-2.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'leonard-est-toujours-un-genie'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-3.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'brouillard-au-pont-de-tolbiac'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-4.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'les-raisins-verts-pierre-henri-simon'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-5.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="swiper-wrapper">
+
+                <a href="{{path('pruduct',{'slug' :'antigone-jean-anouilh'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-1.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'rhinoceros-abastado-claude'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-2.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'leonard-est-toujours-un-genie'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-6.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'brouillard-au-pont-de-tolbiac'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-8.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{path('pruduct',{'slug' :'les-raisins-verts-pierre-henri-simon'})}}" class="swiper-slide box">
+                    <div class="image">
+                        <img src="{{ asset('assets/image/book-7.png') }}" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>nouveau livre</h3>
+                        <div class="price">10.99€ <span>20.99€</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+       
+        </div>
+
+    </section>
+
+    <!-- arrivals section ends -->
+
+    <!-- deal section starts  -->
+
+    <section class="deal">
+
+        <div class="content">
+            <h3>Le deal du jour</h3>
+            <h1>PROMO 50% réduction</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis in atque dolore tempora quaerat at fuga dolorum natus velit.</p>
+            <a href="{{path('pruducts')}}" class="btn">Voir Plus</a>
+        </div>
+
+        <div class="image">
+            <img src="{{ asset('assets/image/deal-img.jpg') }}" alt="">
+        </div>
+
+    </section>
+
+    <!-- deal section ends -->
+
+    
+
+    {% endblock %}
+

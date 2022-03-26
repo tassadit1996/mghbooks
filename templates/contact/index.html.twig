@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact - MGH-BOOKS{% endblock %}
+
+{% block home %}<br>
+<h1 style="color: lightseagreen; margin-left: 40%; font-size: 28px">contact</h1> <br>
+<div class="row">
+{% for message in app.flashes('notice')%}
+<div style=" margin-left: 30%; font-size: 18px">{{ message }}</div>
+{% endfor %}
+   <br><br><br><div class="col-md-8" style="font-size: 15px; width: 400px; margin-left: auto;
+    margin-right: auto;">
+   {{form(form)}}
+   </div>
+   <div class="col-md-4" style="font-size: 15px; width: 400px; margin-left: auto;
+    margin-right: auto;" id="info1">
+   <strong style="color: lightseagreen;  font-size: 25px">MGH BOOKS</strong><hr></br>
+   <i class="fas fa-phone"></i> +213(0) 781 229 215</br>
+   <i class="fas fa-home"></i> mekla, tizi ouzou</br>
+   <i class="fas fa-envelope"></i> tassadit.mgh@gmail.com</br></br>
+   <img src="{{ asset('assets/image/worldmap.png') }}" class="map" alt="">
+        
+   
+
+
+
+   </div>
+</div>
+{% endblock %}

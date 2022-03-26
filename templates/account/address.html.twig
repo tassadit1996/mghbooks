@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses-MGH Books{% endblock %}
+
+{% block home %}<br><br>
+
+<h1 style="color: lightseagreen; margin-left:20%;margin-right:10%; font-size: 28px">Mes adresses</h1><br>
+<a class="btn" style=" margin-left:20%;margin-right:10%;" href="{{path('account_address_add')}}">Ajouter une adresse</a>
+<a class="btn" style=" margin-left:20%;margin-right:10%;" href="{{path('account')}}">Retour</a>
+
+<br>
+    {% if app.user.adresses|length == 0 %}
+    <p style=" margin-left:20%;margin-right:10%; font-size: 16px" >Vous n'avez pas encore ajouté d'adresse dans votre compte client. Pour en ajouter, veuillez <a href="">cliquer ici</a></p>
+    {% else %}
+    
+    <div class="row" id="row6">
+    {% for adress in app.user.adresses %}
+    <div class="col-md-2"> 
+    
+    <div class="card" style="width: 18rem;">
+     <div class="card-body">
+       <h5 class="card-title">{{adress.name}}</h5>
+       <p class="card-text">{{adress.address}}<br>{{adress.postal}}- {{adress.city}}-{{adress.country}}</p><br>
+       <a href="{{path('account_address_edit',{'id':adress.id})}}" style="font-size: 15px;">Modifier </a>|<a href="{{path('account_address_delete',{'id':adress.id})}}" style="font-size: 15px;"> Supprimer</a>
+     </div>
+     </div>
+    </div>
+    {% endfor %}
+    </div>
+   
+     
+
+{% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de commande - MGH-Books{% endblock %}
+
+{% block home %}
+<h2 style="color: lightseagreen; text-align:center; font-size: 20px">Confirmation de commande</h2><br>
+<p style="margin-left:10%;text-align:left; font-size: 16px">
+
+Bonjour <strong> {{ order.user.firstname }} {{ order.user.lastname }} </strong><br>
+Nous vous remerçions pour votre commande n°<strong>{{order.reference}}</strong><br>
+Une confirmation vient de vous etre envoyée par email à l'adresse <strong>{{order.user.email}}</strong><br><br>
+Votre commande sera livrée par <strong>{{order.carrierName}}</strong> à l'adresse suivante : <br> {{order.delivery|raw}}<br><br>
+Pour suivre votre commande, rendez-vous dans votre <a href="{{path('account_order')}}">compte</a>
+
+</p>
+
+{% endblock %}

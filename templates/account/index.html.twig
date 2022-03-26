@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte-MGH Books{% endblock %}
+
+{% block home %}<br><br>
+<h1 style="color: lightseagreen; margin-left:20%;margin-right:10%; font-size: 28px">Mon compte</h1><br>
+<p style=" margin-left:20%;margin-right:10%; font-size: 16px">Bienvenu {{app.user.firstname}} dans votre compte.<br>
+</p><br>
+{% if is_granted('ROLE_ADMIN') %}
+<a href="/admin" class="btn" style=" margin-left:20%">Accéder au backoffice</a><br>
+{% endif %}
+<a href="{{path('account_password')}}" class="btn" style=" margin-left:20%">Modifier mon mot de passe</a><br>
+<a href="{{path('account_address')}}" class="btn" style=" margin-left:20%" >Gérer mes adresses</a><br>
+<a href="{{path('account_order')}}" class="btn" style=" margin-left:20%">Mes Commandes</a><br><br><br><br>
+{% endblock %}

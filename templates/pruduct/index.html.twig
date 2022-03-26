@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits-MGH-BOOKS{% endblock %}
+
+{% block home %}
+<div class="row"id="row1">
+    <div class="col-md-2" >
+        <br>
+        
+        {{ form(form) }}
+    </div>
+    <div class="col-md-10" >
+        <div class="row" id="row2">
+            {% for pruduct in products %}
+                <div class="col-md-4">
+                    <center><div class="product-item">
+                            <a href="{{ path('pruduct',{'slug' : pruduct.slug}) }}"> <img src="/uploads/files/{{ pruduct.illustration }}" alt="{{ pruduct.name }}" class="img"></a>
+                            <h2>{{ pruduct.name }}</h2>
+                            <h3>{{ pruduct.subtitle }}</h3>
+                            <span class="price">{{ (pruduct.price / 100)|number_format(2,',','.') }} €</span>
+                        </div></center>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Commandes-MGH Books{% endblock %}
+
+{% block home %}<br><br>
+
+<h1 style="color: lightseagreen;text-align:center; font-size: 28px">Mes Commandes <a class="btn" style="margin-left: 25%" href="{{path('account')}}">Retour</a></h1><br>
+
+
+<br>
+    {% if orders|length == 0 %}
+    <p style=" margin-left:20%;margin-right:10%; font-size: 16px" >Vous n'avez pas encore effectué de commandes.</p>
+    {% else %}
+      <center><table class="table100-head">
+            <thead>
+            <tr class="row100 head">
+                <th scope="col">Passé le</th>
+                <th scope="col">Statut</th>
+                <th scope="col">Référence</th>
+                <th scope="col">Produit(s)</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+                
+            </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{order.createdAt|date('d/m/Y')}}</td>
+                        <td>
+                        {% if order.state == 0 %}
+                        Paiement en attente
+                        {% elseif order.state == 1 %}
+                        Paiement accepté
+                        {% elseif order.state == 2 %}
+                        Préparation en cours
+                        {% elseif order.state == 3 %}
+                        Livraison en cours
+                        {% endif %}
+                        </td>
+                        <td><mark style="color:white; background-color:lightseagreen; margin:10%"> {{order.reference}} </mark></td>
+                        <td>{{order.orderDetails|length}}</td>
+                        <td>{{((order.carrierPrice + order.getTotal) / 100)|number_format(2, '.', ',')}}€</td>
+                        <td id="seul"><a href="{{path('account_order_show', {'reference': order.reference})}}">Voir ma commande</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table></center>
+    </div>
+   
+     
+
+{% endif %}
+
+{% endblock %}

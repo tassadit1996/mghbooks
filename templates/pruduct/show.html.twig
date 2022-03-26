@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}-MGH-BOOKS{% endblock %}
+
+{% block home %}
+<div class="row"id="row3">
+    <div class="col-md-4">
+        <img src="/uploads/files/{{ product.illustration }}" alt="{{ product.name }}" class="img-p">
+    </div>
+    <div class="col-md-8" >
+        <br>
+        <br>
+        <h1>{{ product.name }}</h1><br>
+        <h2>{{ product.subtitle }}</h2><br>
+        <span class="price">{{ (product.price / 100)|number_format(2,',','.') }} €</span>
+        <br><br>
+        <p style="font-size: 13px">
+            {{ product.description }}
+        </p><br>
+        <a href="{{ path('add_to_cart',{'id': product.id }) }}" class="btn">Ajouter au panier</a>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

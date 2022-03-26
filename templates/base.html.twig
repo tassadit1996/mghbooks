@@ -1,19 +1,156 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang="fr" class="rwd">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MGH BOOKS - Lire, apprendre, inspirer{% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    </title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    {% block javascript %}{% endblock %}
+    
+
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="header-1">
+<div class="share" id="share">
+        <a href="https://www.facebook.com/people/Tassadit-Maghni/100078085666946/" class="fab fa-facebook-f"></a>
+        <a href="https://www.linkedin.com/in/tassadit-maghni-3a02571bb?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BujvDAwp1T6eTuSIEVgTTVg%3D%3D" class="fab fa-linkedin"></a>
+        <a href="https://www.instagram.com/tassaditmgh/" class="fab fa-instagram"></a>
+        
+    </div>
+        <a href="{{path('home')}}" class="logo"> <i class="fas fa-book"></i> MGH-BOOKS </a>
+
+        
+    
+
+        <div class="icons">
+            <div id="search-btn"></div>
+           
+            <a href="{{path('cart')}}" class="fas fa-shopping-cart"></a>
+            {% if app.user %}
+            <a href="{{path('account')}}" title="Mon compte"  class="fas fa-user"></a>
+            <a href="{{path('app_logout')}}"  class="fas fa-sign-out-alt" title="Déconnexion"></a>
+            {% else %}
+            <a href="{{path('app_login')}}" title="Connexion"  class="fas fa-user"></a>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="{{path('home')}}">home</a>
+            <a href="{{ path('pruducts') }}">Nos Livres</a>
+            <a href="#featured">Sélection du jour</a>
+            <a href="#arrivals">Nouvel arrivage</a>
+            <a href="{{path('contact')}}">Contact</a>
+        </nav>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#featured" class="fas fa-list"></a>
+    <a href="#arrivals" class="fas fa-tags"></a>
+    <a href="#reviews" class="fas fa-comments"></a>
+    <a href="#blogs" class="fas fa-blog"></a>
+</nav>
+
+<!-- login form  -->
+
+
+
+{% block home %}{% endblock %}
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Nos adresses</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> inde </a
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> afrique </a>
+        </div>
+
+        <div class="box">
+            <h3>Menu</h3>
+            <a href="{{ path('home') }}"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="{{ path('pruducts') }}"> <i class="fas fa-arrow-right"></i> Nos Livres </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Sélection du jour </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Nouvel arrivage </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> blog </a>
+        </div>
+
+        
+
+        <div class="box">
+            <h3>contact infos</h3>
+            <a href="#"> <i class="fas fa-home"></i> mekla, tizi ouzou </a>
+            <a href="#"> <i class="fas fa-phone"></i> 0781229215 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> tassadit.mgh@gmail.com </a>
+            <img src="{{ asset('assets/image/worldmap.png') }}" class="map" alt="">
+        </div>
+
+    </div>  
+
+   
+
+    <div class="credit"> created by <span>Tassadit Maghni</span> | all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- loader  -->
+{% if block ('loader') is defined %}
+<div class="loader-container">
+    <img src="{{ asset('assets/image/loader-img.gif')}}" alt="">
+</div>
+{% endif %}
+{% block script %}{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{{ asset('assets/js/script.js') }}"></script>
+
+</body>
 </html>
